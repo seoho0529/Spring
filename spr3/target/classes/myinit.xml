@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="moneyCalc" class="pack.model.MoneyCalc"/>
+	
+	<bean id="myService" class="pack.controller.MyServiceProcess">  <!-- 기본 파라미터가 없는 생성자를 부르기 때문에 밑에처럼 해야함 -->
+		<constructor-arg>
+			<ref bean="moneyCalc"/>
+		</constructor-arg>
+	</bean>  <!-- 이게 바로 생성자 주입!!!!!!!,, 객체를 spring에 만들고 그 주소를 생성자에,, -->
+	
+</beans>            
